@@ -19,8 +19,7 @@ that contains the Sprotty diagram code.
 
 ![Architecture Diagram](images/architecture.png)
 
-If your extension provides a language, you can include a [Sprotty-enhanced language server]
-(https://github.com/eclipse/sprotty-server) to get fully synchronized diagrams for your language
+If your extension provides a language, you can include a [Sprotty-enhanced language server](https://github.com/eclipse/sprotty-server) to get fully synchronized diagrams for your language
 artifacts. The `SprottyVscodeLanguageExtension` acts as a relay between the language server and a 
 `SprottyLanguageWebview`, and intercepts actions/LSP messages that 
 require to interact with the VS Code workbench.
