@@ -112,6 +112,8 @@ export abstract class SprottyVscodeExtension {
                 return commandArgs[0];
             }
         }
+        if (vscode.window.activeTextEditor) 
+            return vscode.window.activeTextEditor.document.uri
         return undefined;
     }
 
