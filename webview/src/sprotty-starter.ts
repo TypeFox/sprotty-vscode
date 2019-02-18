@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 import { Container } from "inversify";
-import { DiagramServer, TYPES } from "sprotty/lib";
+import { DiagramServer, TYPES } from "sprotty";
 import { SprottyDiagramIdentifier } from "./protocol";
 import { VscodeDiagramServer } from "./vscode-diagram-server";
 import { VscodeDiagramWidget, VscodeDiagramWidgetFactory } from "./vscode-diagram-widget";

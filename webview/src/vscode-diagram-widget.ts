@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 import { inject, injectable, postConstruct } from "inversify";
-import { DiagramServer, IActionDispatcher, ModelSource, RequestModelAction, ServerStatusAction, TYPES, ViewerOptions } from "sprotty/lib";
+import { DiagramServer, IActionDispatcher, ModelSource, RequestModelAction, ServerStatusAction, TYPES, ViewerOptions } from "sprotty";
 import { SprottyDiagramIdentifier } from "./protocol";
 
 export const VscodeDiagramWidgetFactory = Symbol('VscodeDiagramWidgetFactory');

@@ -1,4 +1,4 @@
-import { SGraphFactory, SChildElement, SModelElementSchema, SParentElement, SEdge } from "sprotty/lib";
+import { SGraphFactory, SChildElement, SModelElementSchema, SParentElement, SEdge } from "sprotty";
 
 export class StatesModelFactory extends SGraphFactory {
 

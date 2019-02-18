@@ -2,7 +2,7 @@
 import { svg } from 'snabbdom-jsx';
 
 import { VNode } from "snabbdom/vnode";
-import { Point, PolylineEdgeView, RenderingContext, SEdge, toDegrees } from "sprotty/lib";
+import { Point, PolylineEdgeView, RenderingContext, SEdge, toDegrees } from "sprotty";
 
 
 export class PolylineArrowEdgeView extends PolylineEdgeView {

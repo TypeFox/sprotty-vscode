@@ -31,7 +31,6 @@
 }
 
 .sprotty-edge > .sprotty-routing-handle {
-    r: 5px;
     fill: #888;
     stroke: none;
     z-index: 1000;

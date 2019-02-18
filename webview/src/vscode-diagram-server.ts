@@ -14,7 +14,7 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import { DiagramServer, ActionMessage, ActionHandlerRegistry, isActionMessage, ServerStatusAction, SelectCommand } from 'sprotty/lib';
+import { DiagramServer, ActionMessage, ActionHandlerRegistry, isActionMessage, ServerStatusAction, SelectCommand } from 'sprotty';
 import { inject } from 'inversify';
 import { VscodeDiagramWidgetFactory } from './vscode-diagram-widget';
 
@@ -24,7 +24,7 @@ export class VscodeDiagramServer extends DiagramServer {
 
     @inject(VscodeDiagramWidgetFactory) diagramWidgetFactory: VscodeDiagramWidgetFactory;
 
-    protected initialize(registry: ActionHandlerRegistry) {
+    initialize(registry: ActionHandlerRegistry) {
         super.initialize(registry);
         registry.register(SelectCommand.KIND, this);
         window.addEventListener('message', message => {

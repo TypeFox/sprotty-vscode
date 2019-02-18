@@ -87,9 +87,9 @@ path-is-absolute@^1.0.0:
   integrity sha1-F0uSaHNVNP+8es5r9TpanhtcX18=
 
 reflect-metadata@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.12.tgz#311bf0c6b63cd782f228a81abe146a2bfa9c56f2"
-  integrity sha512-n+IyV+nGz3+0q3/Yf1ra12KpCyi001bi4XFxSjbiWWjfqb52iTTtpGXmCCAOWWIAn9KEuFZKGqBERHmrtScZ3A==
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 rimraf@latest:
   version "2.6.3"
@@ -118,9 +118,9 @@ snabbdom@^0.7.0:
   integrity sha512-XNh90GQiV36hWdfSL46fIVrSSvmBuZlWk3++qaEgBeQWQJCqTphcbjTODPv8/vyZHJaB3VhePsWfGxi/zBxXyw==
 
 sprotty@next:
-  version "0.5.0-next.24674a1"
-  resolved "https://registry.yarnpkg.com/sprotty/-/sprotty-0.5.0-next.24674a1.tgz#888bdf195117f9ff528cda52979cd19765f12852"
-  integrity sha512-GLqM3HIdaQZAZeQK0G3dcVmq8aIpORSFNznQ+hc0wP2YEU81ifClwF3JYWkuIUAG+38tkJZe/xV9kFLMo8XWOA==
+  version "0.5.0-next.8b297c5"
+  resolved "https://registry.yarnpkg.com/sprotty/-/sprotty-0.5.0-next.8b297c5.tgz#8868d845a5f3c1549fd00f09ed1f2c0cb70b71ef"
+  integrity sha512-5zQif5ZndTrFfoDteXmwPdApdWPFYYj4OtgGlDGFFLw/nFI370PJ7p+QenFd3I4rTZmslw2aBTBXiSbBC8y7CQ==
   dependencies:
     file-saver "1.3.3"
     inversify "^4.3.0"
@@ -129,9 +129,9 @@ sprotty@next:
     snabbdom-virtualize "^0.7.0"
 
 typescript@latest:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
-  integrity sha512-VCj5UiSyHBjwfYacmDuc/NOk4QQixbE+Wn7MFJuS0nRuPQbof132Pw4u53dm264O8LPc2MVsc7RJNml5szurkg==
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.3.3.tgz#f1657fc7daa27e1a8930758ace9ae8da31403221"
+  integrity sha512-Y21Xqe54TBVp+VDSNbuDYdGw0BpoR/Q6wo/+35M8PAU0vipahnyduJWirxxdxjsAkS7hue53x2zp8gz7F05u0A==
 
 void-elements@^2.0.1:
   version "2.0.1"

@@ -86,7 +86,7 @@
         "vscode": "^1.1.21",
         "path": "^0.12.7",
         "vscode-languageserver": "^5.2.1",
-        "sprotty-vscode": "0.0.10"
+        "sprotty-vscode": "0.0.13"
     },
     "devDependencies": {
         "@types/node": "^8.0.0",

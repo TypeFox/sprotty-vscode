@@ -5,7 +5,7 @@ import { boundsModule, buttonModule, configureModelElement, ConsoleLogger, defau
     openModule, overrideViewerOptions, PreRenderedElement, PreRenderedView, RectangularNodeView, SEdge, 
     selectModule, SGraph, SGraphView, SLabel, SLabelView, TYPES, undoRedoModule, viewportModule, 
     RectangularNode, 
-    decorationModule} from 'sprotty/lib';
+    decorationModule} from 'sprotty';
 import "../css/diagram.css";
 import { PolylineArrowEdgeView } from "./views";
 import { StatesModelFactory } from "./model";
