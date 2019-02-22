@@ -90,7 +90,7 @@ module.exports = {
             },
         ]
     },
-    devtool: 'source-map',
+    devtool: "eval-source-map",
     plugins: [
         new CircularDependencyPlugin({
             exclude: /(node_modules|examples)\/./,
