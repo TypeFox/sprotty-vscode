@@ -1,6 +1,6 @@
 {
   "name": "sprotty-vscode-webview",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "files": [
     "lib",
     "src",
@@ -12,12 +12,14 @@
   },
   "devDependencies": {
     "rimraf": "latest",
+    "tslint": "^5.11.0",
     "typescript": "latest"
   },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
     "clean": "rimraf lib",
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "lint": "tslint -c ./tslint.json --project ./tsconfig.json"
   }
 }
