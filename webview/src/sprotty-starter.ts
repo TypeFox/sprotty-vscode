@@ -17,7 +17,7 @@
 import { Container } from "inversify";
 import { DiagramServer, TYPES } from "sprotty";
 import { SprottyDiagramIdentifier } from "./protocol";
-import { VscodeDiagramServer } from "./vscode-diagram-server";
+import { VscodeDiagramServer, vscodeApi } from "./vscode-diagram-server";
 import { VscodeDiagramWidget, VscodeDiagramWidgetFactory } from "./vscode-diagram-widget";
 
 export abstract class SprottyStarter {
@@ -29,8 +29,10 @@ export abstract class SprottyStarter {
     protected acceptDiagramIdentifier() {
         console.log('Waiting for diagram identifier...');
         const eventListener = (message: any) => {
-            console.log(`...received.`, message);
+            console.log(`...received...`, message);
             const diagramIdentifier = message.data as SprottyDiagramIdentifier;
+            vscodeApi.postMessage(diagramIdentifier)
+            console.log(`...confirmed.`, message);
             const diContainer = this.createContainer(diagramIdentifier);
             this.addVscodeBindings(diContainer, diagramIdentifier);
             diContainer.get(VscodeDiagramWidget);

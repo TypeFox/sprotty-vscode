@@ -8,7 +8,7 @@
     ],
     "dependencies": {
       "states-sprotty": "0.0.0",
-      "sprotty-vscode-webview": "0.0.5"
+      "sprotty-vscode-webview": "0.0.8"
     },
     "devDependencies": {
       "rimraf": "latest",

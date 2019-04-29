@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 import * as vscode from 'vscode';
-import { ActionMessage, isActionMessage, SprottyDiagramIdentifier, Action } from './protocol';
+import { ActionMessage, isActionMessage, SprottyDiagramIdentifier, Action, isDiagramIdentifier } from './protocol';
 import { SprottyVscodeExtension } from './sprotty-vscode-extension';
 
 export interface SprottyWebviewOptions {
@@ -36,7 +36,7 @@ export class SprottyWebview {
     readonly title: any;
     readonly diagramPanel: vscode.WebviewPanel;
 
-    protected messageQueue: ActionMessage[] = [];
+    protected messageQueue: (ActionMessage | SprottyDiagramIdentifier)[] = [];
     protected disposables: vscode.Disposable[] = [];
 
     constructor(protected options: SprottyWebviewOptions) {
@@ -95,7 +95,6 @@ export class SprottyWebview {
     }
 
     protected async connect() {
-        this.disposables.push(this.diagramPanel.webview.onDidReceiveMessage(message => this.receiveFromWebview(message)));
         this.disposables.push(this.diagramPanel.onDidChangeViewState(event => {
             if (event.webviewPanel.visible) {
                 this.messageQueue.forEach(message => this.sendToWebview(message));
@@ -106,6 +105,23 @@ export class SprottyWebview {
             this.extension.didCloseWebview(this.diagramIdentifier);
             this.disposables.forEach(disposable => disposable.dispose());
         }));
+        this.shakeHands();
+    }
+
+    protected shakeHands() {
+        const handshakeRetry = setInterval(() => {
+            if (this.diagramPanel.visible)
+                this.diagramPanel.webview.postMessage(this.diagramIdentifier);
+        }, 100);
+        const handshakeReceiver = this.diagramPanel.webview.onDidReceiveMessage(msg => {
+            if (isDiagramIdentifier(msg)) {
+                clearInterval(handshakeRetry);
+                handshakeReceiver.dispose();
+                this.disposables.push(this.diagramPanel.webview.onDidReceiveMessage(message => this.receiveFromWebview(message)));
+            }
+        });
+        if (this.diagramPanel.visible)
+            this.diagramPanel.webview.postMessage(this.diagramIdentifier);
     }
 
     protected receiveFromWebview(message: any) {
@@ -114,7 +130,7 @@ export class SprottyWebview {
     }
 
     protected sendToWebview(message: any) {
-        if (isActionMessage(message)) {
+        if (isActionMessage(message) || isDiagramIdentifier(message)) {
             if (this.diagramPanel.visible)
                 this.diagramPanel.webview.postMessage(message);
             else

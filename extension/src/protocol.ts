@@ -45,6 +45,10 @@ export interface SprottyDiagramIdentifier {
     uri: string
 }
 
+export function isDiagramIdentifier(object: any): object is SprottyDiagramIdentifier {
+    return object !== undefined && object.hasOwnProperty('clientId') && object.hasOwnProperty('diagramType') && object.hasOwnProperty('uri');
+}
+
 /////////////////////////////////////
 // LSP extensions
 

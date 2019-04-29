@@ -14,8 +14,7 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import * as vscode from 'vscode';
-import { acceptMessageType, ActionMessage, isActionMessage, SprottyDiagramIdentifier } from './protocol';
+import { acceptMessageType, isActionMessage } from './protocol';
 import { SprottyVscodeLanguageExtension } from './sprotty-vscode-language-extension';
 import { SprottyWebview, SprottyWebviewOptions } from './sprotty-webview';
 
@@ -24,13 +23,6 @@ export class SprottyLanguageWebview extends SprottyWebview {
     static viewCount = 0;
 
     readonly extension: SprottyVscodeLanguageExtension;
-    readonly diagramIdentifier: SprottyDiagramIdentifier;
-    readonly scriptPath: string;
-    readonly title: any;
-    readonly diagramPanel: vscode.WebviewPanel;
-
-    protected messageQueue: ActionMessage[] = [];
-    protected disposables: vscode.Disposable[] = [];
 
     constructor(protected options: SprottyWebviewOptions) {
         super(options);
@@ -42,8 +34,12 @@ export class SprottyLanguageWebview extends SprottyWebview {
         super.connect();
         this.extension.languageClient.onReady().then(() => {
             this.disposables.push(this.extension.onAcceptFromLanguageServer(message => this.sendToWebview(message)));
-            this.diagramPanel.webview.postMessage(this.diagramIdentifier);
+            super.shakeHands();
         });
+    }
+
+    protected shakeHands() {
+        // defer handshake until language client is ready
     }
 
     protected receiveFromWebview(message: any) {

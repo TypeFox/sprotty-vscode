@@ -1261,10 +1261,10 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-sprotty-vscode@0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/sprotty-vscode/-/sprotty-vscode-0.0.13.tgz#bd6fcdfbb701cb52f35e5d15abd65738e03e3e88"
-  integrity sha512-QWRfBhWgt1nugSJG7XvX32gUyzffSm0XwWdj8/M9Fq7qmnyOpL5n/fraM097pgA55ngMhli4tG1Uw88hPsu8Kw==
+sprotty-vscode@0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/sprotty-vscode/-/sprotty-vscode-0.0.16.tgz#9569ff83561540eb2af80f34040a1c47f5121153"
+  integrity sha512-TwXyy9tgPY8q2nJaF+sWYLEJymFOiM7dZUkmfax7lFPaCaXP1UU7hE8iqwFHozaxyrLqZ/CJEWGfh6wmf+slNA==
   dependencies:
     path "^0.12.7"
     vscode "^1.1.21"
