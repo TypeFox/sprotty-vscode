@@ -54,7 +54,6 @@
 }
 
 .sprotty-hidden {
-    font-size: var(--theia-ui-font-size1);
     width: 0px;
     height: 0px;
 }
