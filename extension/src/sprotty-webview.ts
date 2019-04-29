@@ -105,23 +105,12 @@ export class SprottyWebview {
             this.extension.didCloseWebview(this.diagramIdentifier);
             this.disposables.forEach(disposable => disposable.dispose());
         }));
-        this.shakeHands();
+        this.disposables.push(this.diagramPanel.webview.onDidReceiveMessage(message => this.receiveFromWebview(message)));
+        this.startConversation();
     }
 
-    protected shakeHands() {
-        const handshakeRetry = setInterval(() => {
-            if (this.diagramPanel.visible)
-                this.diagramPanel.webview.postMessage(this.diagramIdentifier);
-        }, 100);
-        const handshakeReceiver = this.diagramPanel.webview.onDidReceiveMessage(msg => {
-            if (isDiagramIdentifier(msg)) {
-                clearInterval(handshakeRetry);
-                handshakeReceiver.dispose();
-                this.disposables.push(this.diagramPanel.webview.onDidReceiveMessage(message => this.receiveFromWebview(message)));
-            }
-        });
-        if (this.diagramPanel.visible)
-            this.diagramPanel.webview.postMessage(this.diagramIdentifier);
+    protected startConversation() {
+        this.sendToWebview(this.diagramIdentifier);
     }
 
     protected receiveFromWebview(message: any) {

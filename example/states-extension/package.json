@@ -107,7 +107,7 @@
         "vscode-languageclient": "^5.2.1",
         "path": "^0.12.7",
         "vscode-languageserver": "^5.2.1",
-        "sprotty-vscode": "0.0.16"
+        "sprotty-vscode": "0.0.17"
     },
     "devDependencies": {
         "vscode": "^1.1.21",

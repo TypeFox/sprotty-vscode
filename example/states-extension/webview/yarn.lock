@@ -3756,10 +3756,10 @@ split@^1.0.0:
   dependencies:
     through "2"
 
-sprotty-vscode-webview@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/sprotty-vscode-webview/-/sprotty-vscode-webview-0.0.8.tgz#eb4a2675994159f5b422894998868b1c800a55be"
-  integrity sha512-pDmHXfEDllK2E5lV6SMhz1XvXLBraa/1HiC7jriAir7xNo8OUsHLySCkGhoG3Au9D4M+daSNRtXgmY4MFgcjhg==
+sprotty-vscode-webview@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/sprotty-vscode-webview/-/sprotty-vscode-webview-0.0.9.tgz#306e9deadb805191fac4cec5c54d3dfae9f6a586"
+  integrity sha512-yiacZFT+I7uaOmJibADjdBxCB6wr6jiA59umGfd8MrAWQ2zxV0foX8eT0vbMZC1yP9RDaQXqo9eSYw0FC+ZQOg==
   dependencies:
     reflect-metadata "^0.1.12"
     sprotty next

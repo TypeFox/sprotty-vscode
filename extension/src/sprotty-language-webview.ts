@@ -34,12 +34,12 @@ export class SprottyLanguageWebview extends SprottyWebview {
         super.connect();
         this.extension.languageClient.onReady().then(() => {
             this.disposables.push(this.extension.onAcceptFromLanguageServer(message => this.sendToWebview(message)));
-            super.shakeHands();
+            super.startConversation();
         });
     }
 
-    protected shakeHands() {
-        // defer handshake until language client is ready
+    protected startConversation() {
+        // defer first message until language client is ready
     }
 
     protected receiveFromWebview(message: any) {
