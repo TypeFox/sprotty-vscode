@@ -4,3 +4,4 @@ lib
 server
 pack
 *.vsix
+src-gen/
