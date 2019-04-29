@@ -7,7 +7,7 @@
         "type": "git",
         "url": "https://github.com/TypeFox/sprotty-vscode"
     },
-    "version": "0.0.3",
+    "version": "0.0.7",
     "engines": {
         "vscode": "^1.30.0"
     },
@@ -15,59 +15,81 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "states",
-            "aliases": ["states", "sm"],
-            "extensions": [".sm"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "states",
-            "scopeName": "source.sm",
-            "path": "./syntaxes/states.tmLanguage.json"
-        }],
-        "commands": [{
-            "command": "states.diagram.open",
-            "title": "Open in diagram",
-            "category": "States Diagram"
-        },{
-            "command": "states.diagram.fit",
-            "title": "Fit to Screen",
-            "category": "States Diagram"
-        },{
-            "command": "states.diagram.center",
-            "title": "Center selection",
-            "category": "States Diagram"
-        },{
-            "command": "states.diagram.export",
-            "title": "Export diagram to SVG",
-            "category": "States Diagram"
-        }],
+        "languages": [
+            {
+                "id": "states",
+                "aliases": [
+                    "states",
+                    "sm"
+                ],
+                "extensions": [
+                    ".sm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "states",
+                "scopeName": "source.sm",
+                "path": "./syntaxes/states.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "states.diagram.open",
+                "title": "Open in diagram",
+                "category": "States Diagram"
+            },
+            {
+                "command": "states.diagram.fit",
+                "title": "Fit to Screen",
+                "category": "States Diagram"
+            },
+            {
+                "command": "states.diagram.center",
+                "title": "Center selection",
+                "category": "States Diagram"
+            },
+            {
+                "command": "states.diagram.export",
+                "title": "Export diagram to SVG",
+                "category": "States Diagram"
+            }
+        ],
         "menus": {
-            "editor/context": [{
-                "when": "editorLangId==states",
-                "command": "states.diagram.open",
-                "group": "navigation"
-            }],
-            "explorer/context": [{
-                "when": "resourceExtname == '.sm'",
-                "command": "states.diagram.open",
-                "group": "navigation"
-            }]
+            "editor/context": [
+                {
+                    "when": "editorLangId==states",
+                    "command": "states.diagram.open",
+                    "group": "navigation"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "when": "resourceExtname == '.sm'",
+                    "command": "states.diagram.open",
+                    "group": "navigation"
+                }
+            ]
         },
-        "keybindings": [{
-            "key": "alt+f",
-            "mac": "alt+f",
-            "command": "states.diagram.fit"
-        }, {
-            "key": "alt+c",
-            "mac": "alt+c",
-            "command": "states.diagram.center"
-        }, {
-            "key": "alt+e",
-            "mac": "alt+e",
-            "command": "states.diagram.export"
-        }]
+        "keybindings": [
+            {
+                "key": "alt+f",
+                "mac": "alt+f",
+                "command": "states.diagram.fit"
+            },
+            {
+                "key": "alt+c",
+                "mac": "alt+c",
+                "command": "states.diagram.center"
+            },
+            {
+                "key": "alt+e",
+                "mac": "alt+e",
+                "command": "states.diagram.export"
+            }
+        ]
     },
     "activationEvents": [
         "onLanguage:states",
