@@ -14,6 +14,8 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-declare function acquireVsCodeApi(): {
+declare function acquireVsCodeApi(): VsCodeApi;
+
+declare interface VsCodeApi {
     postMessage: (message: any) => void
-};
+}

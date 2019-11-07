@@ -17,8 +17,7 @@
 import { DiagramServer, ActionMessage, ActionHandlerRegistry, isActionMessage, ServerStatusAction, SelectCommand } from 'sprotty';
 import { inject } from 'inversify';
 import { VscodeDiagramWidgetFactory } from './vscode-diagram-widget';
-
-export const vscodeApi = acquireVsCodeApi();
+import { vscodeApi } from './sprotty-starter';
 
 export class VscodeDiagramServer extends DiagramServer {
 

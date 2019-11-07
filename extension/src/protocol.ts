@@ -37,7 +37,15 @@ export function isActionMessage(object: any): object is ActionMessage {
 }
 
 /////////////////////////////////////
-// diagram identifier
+// initial handshake
+
+export interface WebviewReadyMessage {
+    readyMessage: string
+}
+
+export function isWebviewReadyMessage(object: any): object is WebviewReadyMessage {
+    return object !== undefined && object.hasOwnProperty('readyMessage');
+}
 
 export interface SprottyDiagramIdentifier {
     clientId: string,

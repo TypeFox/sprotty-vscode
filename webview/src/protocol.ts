@@ -22,3 +22,6 @@ export interface SprottyDiagramIdentifier {
     uri: string
 }
 
+export interface WebviewReadyMessage {
+    readyMessage: string
+}

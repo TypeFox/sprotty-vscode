@@ -16,14 +16,21 @@
 
 import { Container } from "inversify";
 import { DiagramServer, TYPES } from "sprotty";
-import { SprottyDiagramIdentifier } from "./protocol";
+import { SprottyDiagramIdentifier, WebviewReadyMessage } from "./protocol";
 import { VscodeDiagramServer } from "./vscode-diagram-server";
 import { VscodeDiagramWidget, VscodeDiagramWidgetFactory } from "./vscode-diagram-widget";
+
+export const vscodeApi = acquireVsCodeApi();
 
 export abstract class SprottyStarter {
 
     constructor() {
+        this.sendReadyMessage();
         this.acceptDiagramIdentifier();
+    }
+
+    protected sendReadyMessage() {
+        vscodeApi.postMessage({ readyMessage: 'Sprotty Webview ready'} as WebviewReadyMessage);
     }
 
     protected acceptDiagramIdentifier() {

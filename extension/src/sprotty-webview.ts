@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 import * as vscode from 'vscode';
-import { ActionMessage, isActionMessage, SprottyDiagramIdentifier, Action, isDiagramIdentifier } from './protocol';
+import { ActionMessage, isActionMessage, SprottyDiagramIdentifier, Action, isDiagramIdentifier, isWebviewReadyMessage, WebviewReadyMessage } from './protocol';
 import { SprottyVscodeExtension } from './sprotty-vscode-extension';
 
 export interface SprottyWebviewOptions {
@@ -36,6 +36,8 @@ export class SprottyWebview {
     readonly title: any;
     readonly diagramPanel: vscode.WebviewPanel;
 
+    protected resolveWebviewReady: (message: WebviewReadyMessage) => void;
+    protected readonly webviewReady = new Promise<WebviewReadyMessage>((resolve) => this.resolveWebviewReady = resolve);
     protected messageQueue: (ActionMessage | SprottyDiagramIdentifier)[] = [];
     protected disposables: vscode.Disposable[] = [];
 
@@ -106,16 +108,19 @@ export class SprottyWebview {
             this.disposables.forEach(disposable => disposable.dispose());
         }));
         this.disposables.push(this.diagramPanel.webview.onDidReceiveMessage(message => this.receiveFromWebview(message)));
-        this.startConversation();
+        this.sendDiagramIdentifier();
     }
 
-    protected startConversation() {
+    protected async sendDiagramIdentifier() {
+        await this.webviewReady;
         this.sendToWebview(this.diagramIdentifier);
     }
 
     protected receiveFromWebview(message: any) {
         if (isActionMessage(message))
             this.accept(message.action);
+        else if (isWebviewReadyMessage(message))
+            this.resolveWebviewReady(message);
     }
 
     protected sendToWebview(message: any) {

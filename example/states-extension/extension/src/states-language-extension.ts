@@ -46,7 +46,8 @@ export class StatesLanguageExtension extends SprottyVscodeLanguageExtension {
         const serverLauncher = context.asAbsolutePath(languageServerPath);
         const serverOptions: ServerOptions = {
             run: {
-                command: serverLauncher
+                command: serverLauncher,
+                args: ['-trace']
             },
             debug: {
                 command: serverLauncher
