@@ -9,3 +9,13 @@ tasks:
 vscode:
   extensions:
     - TypeFox.states-extension@0.0.10:Hs0ZNmIVo5a2FkECXbuFjg==
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: true
+    addBadge: false
+    addLabel: false
