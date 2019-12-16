@@ -1,0 +1,11 @@
+tasks:
+  - init: |
+      yarn --cwd extension
+      yarn --cwd webview
+      yarn --cwd example/states-extension/webview
+      yarn --cwd example/states-extension
+      yarn --cwd example/states-extension package
+    command: echo 'start script'
+vscode:
+  extensions:
+    - TypeFox.states-extension@0.0.10:Hs0ZNmIVo5a2FkECXbuFjg==
