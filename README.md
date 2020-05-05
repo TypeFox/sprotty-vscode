@@ -1,3 +1,5 @@
+# This repo has been archived. The project is continued at https://github.com/eclipse/sprotty-vscode
+
 # sprotty-vscode
 
 This repository contains the glue code to integrate [Sprotty diagrams](https://github.com/eclipse/sprotty) - with or without a language server - in VSCode extensions.
